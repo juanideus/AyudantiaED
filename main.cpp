@@ -1,20 +1,27 @@
 #include <iostream>
+
+#include "src/Persona.h"
+#include "src/Ayudantia2/ListaSimple.h"
+
+namespace Perro {
+   string mostrar();
+}
+namespace gato {
+   string mostrar();
+}
 using namespace std;
 //Punto de entrada de nuestra aplicacion (Entry poiny)
 int main() {
+   ListaSimple *lista = new ListaSimple();
+   lista->agregar(1,0);
+   lista->agregar(2,1);
+   lista->agregar(3,2);
+   lista->agregar(4,3);
+   cout<<lista->toString() <<endl;
+   lista->eliminar(2);
+   cout<<lista->toString();
 
 
-
-    int a[] = {1, 2, 3,5,6,7,8,9,10};
-    for (int i = 0; i < 9; i++) {
-        if (i %2 == 0) {
-            *(a+i) = 10;
-        }
-
-    }
-    for (int i = 0; i < 9; i++) {
-        cout << *(a+i) << endl;
-    }
 }
 
 
