@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "src/Persona.h"
+#include "src/Ayudantia2/Persona.h"
 #include "src/Ayudantia2/ListaSimple.h"
 
 namespace Perro {
