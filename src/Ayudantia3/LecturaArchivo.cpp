@@ -51,7 +51,8 @@ namespace LecturaArchivos {
             getline(*ss,age,delimiter);
             Persona *persona = new Persona(
                 stoi(id),name,stoi(age));
-            arr[++tamanio] = persona;
+            arr[tamanio] = persona;
+            tamanio++;
         }
 
     }

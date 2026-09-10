@@ -7,23 +7,25 @@
 using namespace std;
 //Punto de entrada de nuestra aplicacion (Entry poiny)
 int main() {
-
+    //parte 1
     // cout<<"Hola"<<endl;
     // int datoUsuario;
     // cin >> datoUsuario;
     // cout << datoUsuario << endl;
+    //parte 2
     // LecturaArchivos::leerArchivo("../ejemplo1");
     // LecturaArchivos::leerArchivoDelimiter("../ejemplo2",';');
-    // Persona ** arr = new Persona*[5];
-    // int n = 0;
-    // LecturaArchivos::leerArchivoConClase("../ejemplo3",';',arr,n);
-    // cout << n << endl;
-    // for (int i = 0; i < n; i++) {
-    //     Persona *persona = arr[i];
-    //     cout << persona->getName()<< endl;
-    // }
-    int * arr = new int[5];
-    int arr2[5];
+    Persona ** arr = new Persona*[5];
+    int n = 0;
+    LecturaArchivos::leerArchivoConClase("../ejemplo3",';',arr,n);
+    cout << n << endl;
+    for (int i = 0; i < n; i++) {
+        Persona *persona = arr[i];
+        cout << persona->getName()<< endl;
+    }
+    //parte 3
+    // int * arr = new int[5];
+    // int arr2[5];
 
 
 
