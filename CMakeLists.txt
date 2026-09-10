@@ -10,4 +10,6 @@ add_executable(Ayudantia main.cpp
         src/Ayudantia2/Nodo.h
         src/Ayudantia2/ListaSimple.cpp
         src/Ayudantia2/ListaSimple.h
+        src/Ayudantia3/lecturaArchivo.cpp
+        src/Ayudantia3/LecturaArchivo.h
 )
