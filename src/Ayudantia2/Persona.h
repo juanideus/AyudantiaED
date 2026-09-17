@@ -9,7 +9,7 @@ using namespace std;
 
 
 class Persona {
-private:
+protected:
     int id;
     string name;
     int age;
@@ -17,6 +17,8 @@ private:
     Persona();
     Persona(int id,string nombre,int age);
     string getName();
+    int getId();
+    int getAge();
 
 };
 

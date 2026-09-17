@@ -12,4 +12,10 @@ add_executable(Ayudantia main.cpp
         src/Ayudantia2/ListaSimple.h
         src/Ayudantia3/lecturaArchivo.cpp
         src/Ayudantia3/LecturaArchivo.h
+        src/Ayudantia4/Estudiante.cpp
+        src/Ayudantia4/Estudiante.h
+        src/Ayudantia4/HistorialDeNotas.cpp
+        src/Ayudantia4/HistorialDeNotas.h
+        src/Ayudantia4/ServicioAcademico.cpp
+        src/Ayudantia4/ServicioAcademico.h
 )
