@@ -1,0 +1,13 @@
+//
+// Created by Deus on 19-09-2026.
+//
+
+#ifndef AYUDANTIA_LISTASIMPLECIRCULAR_H
+#define AYUDANTIA_LISTASIMPLECIRCULAR_H
+
+
+class ListaSimpleCircular {
+};
+
+
+#endif //AYUDANTIA_LISTASIMPLECIRCULAR_H
