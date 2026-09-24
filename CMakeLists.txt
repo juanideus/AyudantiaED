@@ -24,8 +24,20 @@ add_executable(Ayudantia main.cpp
         src/Ayudantia5/NodoDoble.h
         src/Ayudantia5/ListaDoble.cpp
         src/Ayudantia5/ListaDoble.h
-        src/Ayudantia6/MPP.cpp
-        src/Ayudantia6/MPP.h
-        src/Ayudantia6/NodoMPP.cpp
-        src/Ayudantia6/NodoMPP.h
+        src/Ayudantia6/Matriz/MPP.cpp
+        src/Ayudantia6/Matriz/MPP.h
+        src/Ayudantia6/Matriz/NodoMPP.cpp
+        src/Ayudantia6/Matriz/NodoMPP.h
+        src/Ayudantia6/Sistema/Sistema.cpp
+        src/Ayudantia6/Sistema/Sistema.h
+        src/Ayudantia6/Punto/Punto.cpp
+        src/Ayudantia6/Punto/Punto.h
+        src/Ayudantia6/Campo/Campo.cpp
+        src/Ayudantia6/Campo/Campo.h
+        src/Ayudantia6/Util/elemento.h
+        src/Ayudantia6/Punto/PuntoCampo.cpp
+        src/Ayudantia6/Punto/PuntoCampo.h
+        src/Ayudantia6/Bala/Bala.cpp
+        src/Ayudantia6/Bala/Bala.h
+
 )
