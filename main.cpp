@@ -2,6 +2,7 @@
 
 #include "src/Ayudantia6/Matriz/MPP.h"
 #include "src/Ayudantia6/Sistema/Sistema.h"
+#include "src/Ayudantia7/ArbolAB.h"
 using namespace std;
 void menuPrincipal(Sistema * sistema);
 void prepararPartida(Sistema * sistema) {
@@ -83,18 +84,24 @@ void menuPrincipal(Sistema * sistema) {
 
 };
 
+///
+/// @param a
+/// @param b
+void sumarXmem(int &a,int &b) {
+    a=a+b;
+}
+
+///
+/// @param a
+/// @param b
+/// @return
+int sumar(int a, int b) {
+    return a + b;
+}
 
 
 //Punto de entrada de nuestra aplicacion (Entry poiny)
 int main() {
-    try {
-        Sistema *S = new Sistema();
-        menuPrincipal(S);
-
-    }catch (std::invalid_argument &e) {
-        cout << e.what() << endl;
-    }
-
-    return 0;
-
+  ArbolAB * arbol = new ArbolAB();
+    arbol->insertar();
 }

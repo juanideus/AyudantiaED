@@ -10,6 +10,7 @@ Persona::Persona() {
     this->name= "vacio";
     this->age= 0;
 }
+///
 Persona::Persona(int id,string nombre, int age) {
     this->id = id;
     this->name = nombre;
@@ -17,5 +18,5 @@ Persona::Persona(int id,string nombre, int age) {
 }
 string Persona::getName() {
     return this->name;
-
 }
+

@@ -27,6 +27,7 @@ void ListaDoble::mostrarAtrasRecursivo(NodoDoble *actual) const {
 }
 
 NodoDoble * ListaDoble::buscarRecursivo(NodoDoble *actual, int dato) const {
+        return nullptr;
 }
 
 int ListaDoble::contarRecursivo(NodoDoble *actual) const {
@@ -43,7 +44,7 @@ NodoDoble * ListaDoble::obtenerPorPosicionRecursivo(NodoDoble *actual, int posic
         if (posicion == 0) {
                 return actual;
         }
-        return obtenerPorPosicionRecursivo(actual->getSig(), posicion-1);.
+        return obtenerPorPosicionRecursivo(actual->getSig(), posicion-1);
 
 }
 

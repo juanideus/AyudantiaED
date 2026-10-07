@@ -39,5 +39,9 @@ add_executable(Ayudantia main.cpp
         src/Ayudantia6/Punto/PuntoCampo.h
         src/Ayudantia6/Bala/Bala.cpp
         src/Ayudantia6/Bala/Bala.h
+        src/Ayudantia7/NodoAB.cpp
+        src/Ayudantia7/NodoAB.h
+        src/Ayudantia7/ArbolAB.cpp
+        src/Ayudantia7/ArbolAB.h
 
 )
