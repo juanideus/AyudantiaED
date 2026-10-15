@@ -11,20 +11,21 @@ class ArbolAB {
     NodoAB * root;
     NodoAB* constuir();
     void preorderRecursivo(NodoAB* nodo);
-    void InorderRecursivo(NodoAB* nodo);
+    void inorderRecursivo(NodoAB* nodo);
     void postorderRecursivo(NodoAB* nodo);
     NodoAB* eliminarRecursivo(NodoAB* actual,int dato,bool & elimnado);
 
 public:
     ArbolAB();
-    void Inorder();
+    void preorder();
+    void inorder();
     void postorder();
 
 
     // bool insertar(int dato);
     bool eliminar(int dato);
     // void recorrer();
-    void preorder();
+
     void insertar();
 
 };

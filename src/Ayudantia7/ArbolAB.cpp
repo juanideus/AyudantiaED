@@ -44,14 +44,14 @@ void ArbolAB::preorder() {
     preorderRecursivo(this->root);
 }
 
-void ArbolAB::InorderRecursivo(NodoAB *nodo) {
+void ArbolAB::inorderRecursivo(NodoAB *nodo) {
 
     if (nodo == nullptr) {
         return;
     }
-    InorderRecursivo(nodo->getIzq());
+    inorderRecursivo(nodo->getIzq());
     cout<<nodo->getData();
-    InorderRecursivo(nodo->getDer());
+    inorderRecursivo(nodo->getDer());
 
 
 }
@@ -66,10 +66,12 @@ void ArbolAB::postorderRecursivo(NodoAB *nodo) {
     cout<<nodo->getData();
 }
 
-void ArbolAB::Inorder() {
+void ArbolAB::inorder() {
+    inorderRecursivo(this->root);
 }
 
 void ArbolAB::postorder() {
+    postorderRecursivo(this->root);
 
 }
 
