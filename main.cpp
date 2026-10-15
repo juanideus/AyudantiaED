@@ -104,4 +104,9 @@ int sumar(int a, int b) {
 int main() {
   ArbolAB * arbol = new ArbolAB();
     arbol->insertar();
+    arbol->preorder();
+    arbol->eliminar(5);
+    cout<<endl;
+    arbol->preorder();
+
 }
