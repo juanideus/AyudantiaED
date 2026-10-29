@@ -43,5 +43,9 @@ add_executable(Ayudantia main.cpp
         src/Ayudantia7/NodoAB.h
         src/Ayudantia7/ArbolAB.cpp
         src/Ayudantia7/ArbolAB.h
+        src/Ayudantia8/ListaConNexo.Tpp
+        src/Ayudantia8/ListaConNexo.h
+        src/Ayudantia8/nodoSimple.tpp
+        src/Ayudantia8/nodoSimple.h
 
 )
