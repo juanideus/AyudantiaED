@@ -3,40 +3,62 @@
 #include "src/Ayudantia8/ListaConNexo.h"
 
 using namespace std;
-#include "src/Ayudantia7/ArbolAB.h"
-#include "src/Ayudantia2/Persona.h"
+
 #include <thread>
-void sumarPorPartes(int * datos,int *resultados,int inicio,int final,int indice) {
-    int suma=0;
-    for (int i = inicio; i < final; i++) {
-        suma += *(datos+ i);
-    }
-    *(resultados+indice) = suma;
-
-}
-//Punto de entrada de nuestra aplicacion (Entry poiny)
+#include <mutex>
+void procesartransaccion(int *data,int inicio,int final,long long & balanceTotal, int &totalDepositos, int& maximoGlobal, mutex& mtx);
+//Punto de entrada de nuestra aplicacion (Entry point)
 int main() {
-    int* numeros = new int[10]{10,20,30,40,50,60,70,80,90,100};
-    thread * hilos = new thread[2];
-    int * resultados = new int[2]{0,0};
+    mutex  mtx;
+    //creamos variables globales
+    int N = 100000;
+    int NUM_H=4;
+    int *transacciones = new int[N];
+    thread  *hilos = new thread[NUM_H];
+    long long balanceTotal=0;
+    int cantidadDepositos=0;
+    int transaccionMaxima=0;
+    srand(time(NULL));
+    for (int i = 0; i < N; i++) {
+        transacciones[i]=(i%2 == 0) ? rand()%1000 : -(rand()%1000);
+    }
 
-    hilos[0] = thread(sumarPorPartes,numeros,resultados,0,5,0);
-    hilos[1]= thread(sumarPorPartes,numeros,resultados,5,10,1);
-    for (int i = 0; i < 2; i++) {
+    int bloque= N/4; // 250000
+    for ( int i = 0; i < NUM_H; i++) {
+        int inico = i * bloque;
+        int final=(i == NUM_H-1) ? N : (i+1)*bloque;
+        hilos[i]= thread(procesartransaccion,transacciones,inico,final,ref(balanceTotal),ref(cantidadDepositos),ref(transaccionMaxima),ref(mtx));
+    }
+    for ( int i = 0; i < NUM_H; i++) {
         hilos[i].join();
     }
-    int sumatotal=0;
-    for (int i = 0; i < 2; i++) {
-        sumatotal += *(resultados+i);
-    }
-    cout << sumatotal << endl;
-    delete [] resultados;
-    delete [] numeros;
-    delete hilos;
-
-
+    cout << balanceTotal << endl;
+    cout << cantidadDepositos << endl;
+    cout << transaccionMaxima << endl;
 
 
 
 
 }
+void procesartransaccion(int *data, int inicio, int final, long long &balanceTotal, int &totalDepositos, int &maximoGlobal, mutex &mtx) {
+    int balanceLocal=0,totalDepositosLocal=0,maximoLocal=INT_MIN;
+    for (int i = inicio; i < final; i++) {
+        int dato = data[i];
+        balanceLocal+=dato;
+        if (dato > 0) {
+            totalDepositosLocal++;
+        }
+        if (dato > maximoLocal) {
+            maximoLocal=dato;
+        }
+    }
+    std::lock_guard guard(mtx);
+    balanceTotal+=balanceLocal;
+    totalDepositos+=totalDepositosLocal;
+    if ( maximoGlobal < maximoLocal) {
+        maximoGlobal=maximoLocal;
+    }
+
+
+}
+
